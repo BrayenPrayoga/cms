@@ -1,0 +1,12 @@
+.leaflet-popup-close-button {
+    display:none;
+}
+
+.leaflet-label-overlay {
+    line-height:0px;
+    margin-top: 3px;
+    position:absolute;
+    font-size: 15px;
+    margin-left: -2px;
+    color: red;
+}
