@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MasterProvinsi extends Model
+class MasterHeader extends Model
 {
     protected $primary = 'id';
 
-    protected $table = 'master_provinsi';
+    protected $table = 'master_header';
 
     public $timestamps = false;
     

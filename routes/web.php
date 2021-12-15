@@ -25,8 +25,17 @@ Route::name('admin.')->middleware('auth:admin')->prefix('admin')->group(function
     // Dashboard
     Route::get('dashboard-admin', 'DashboardAdminController@index')->name('dashboard');
 
-    //Master Data
-    Route::get('data-header', 'MasterHeader@index')->name('data.header');
+    //Master Header
+    Route::get('data-header', 'MasterHeaderController@index')->name('data.header');
+    Route::post('data-header/store', 'MasterHeaderController@store')->name('data.header.store');
+    Route::post('data-header/update', 'MasterHeaderController@update')->name('data.header.update');
+    Route::get('data-header/hapus/{id}', 'MasterHeaderController@hapus')->name('data.header.hapus');
+
+    //Master Pasal
+    Route::get('data-pasal', 'MasterPasalController@index')->name('data.pasal');
+    Route::post('data-pasal/store', 'MasterPasalController@store')->name('data.pasal.store');
+    Route::post('data-pasal/update', 'MasterPasalController@update')->name('data.pasal.update');
+    Route::get('data-pasal/hapus/{id}', 'MasterPasalController@hapus')->name('data.pasal.hapus');
 });
 
 Route::name('user.')->middleware('auth:user')->prefix('users')->group(function () {

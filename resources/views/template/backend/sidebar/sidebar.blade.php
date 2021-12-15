@@ -66,7 +66,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('admin.data.pasal') }}">
                             <i class="fa fa-cogs"></i> Data Pasal
                         </a>
                     </li>

@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MasterPangkat extends Model
+class MasterPasal extends Model
 {
     protected $primary = 'id';
 
-    protected $table = 'master_pangkat';
+    protected $table = 'master_pasal';
 
     public $timestamps = false;
 }

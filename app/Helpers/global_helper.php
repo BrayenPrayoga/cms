@@ -63,44 +63,12 @@
         }
     }
 
-    if(!function_exists('getDataCovid')){
-        function getDataCovid()
+    if(!function_exists('getMasterHeader')){
+        function getMasterHeader($id)
         {
-            $kota = [];
-            $curl = curl_init();
+            $master_header = DB::table('master_header')->where('id', $id)->first();
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://data.covid19.go.id/public/api/prov.json",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ));
-    
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
-            if ($err) {
-                echo "cURL Error #:" . $err;
-            } else {
-                $res = json_decode($response, true);
-                $collection =  $res["list_data"];
-                foreach($collection as $key => $val)
-                {
-                    // array_push($kota, $val['key']);
-                    array_push($kota, [
-                        'kota' =>  $val['key'],
-                        'jumlah_kasus' => $val['jumlah_kasus'],
-                        'jumlah_sembuh' => $val['jumlah_sembuh'],
-                        'jumlah_meninggal' => $val['jumlah_meninggal'],
-                        'jumlah_dirawat' => $val['jumlah_dirawat']
-                    ]);
-                }
-
-                return $kota;
-            }
-
+            return $master_header;
         }
     }
 ?>

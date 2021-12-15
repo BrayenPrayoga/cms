@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>UNIVERSITAS CIRACAS</title>
+	<title>MANAGEMENT SYSTEM</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,7 +33,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-75 p-r-75 p-t-55 p-b-55">
 				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('login') }}">
-				@csrf
+				{{ csrf_field() }}
 					<div class="login100-form-avatar">
 						<img src="{{ asset('assets/img/icon.png') }}" alt="AVATAR">
 					</div>
